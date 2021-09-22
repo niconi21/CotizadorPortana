@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cotizador</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion border-left-danger border-right-danger"
+            id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center m-3" href="index.html">
+                <div class="sidebar-brand-icon">
+                    <img src="./img/logo positivo.png" class="img-fluid" alt="">
+                </div>
+
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-briefcase"></i>
+                    <span>Nueva cotización</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Herramientas
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item ">
+                <a class="nav-link" href="./clientes.html">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Clientes registrados</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="./ingredientes.html">
+                    <i class="fas fa-fw fa-hammer"></i>
+                    <span>Ingredientes registrados</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="./empleados.html">
+                    <i class="fas fa-fw fa-portrait"></i>
+                    <span>Empleados registrados</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./cotizaciones-anteriores.html">
+                    <i class="fas fa-fw fa-history"></i>
+                    <span>Cotizaciónes anteriores</span></a>
+            </li>
+
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <!-- <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div> -->
+
+
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+
+                <nav class="navbar navbar-expand navbar-dark bg-dark topbar static-top shadow text-white">
+
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-dark rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <h3>Nueva cotización</h3>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid bg-gradient-dark">
+
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="card bg-dark text-white border-left-warning border-secondary mb-5">
+                                <div class="card-body">
+                                    <h4>Datos del cliente</h4>
+                                    <form>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputNombre">Nombre</label>
+                                                <input type="text" class="form-control" id="inputNombre">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputDireccion">Dirección</label>
+                                                <input type="text" class="form-control" id="inputDireccion">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputTelefono">Teléfono</label>
+                                                <input type="text" class="form-control" id="inputTelefono">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col text-right">
+                                                <button type="button" class="btn btn-success"><i
+                                                        class="fas fa-plus-circle"></i> Agregar cliente</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="card bg-gradient-dark text-white border-left-primary border-secondary mb-5">
+                                <div class="card-body">
+                                    <h4>Cotización</h4>
+                                    <form>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputNombre">Tipo de proyecto</label>
+                                                <select name="" id="" class="form-control">
+                                                    <option value="Puerta">Puerta</option>
+                                                    <option value="Ventana">Ventana</option>
+                                                    <option value="Protección">Protección</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputDireccion">Tipo de material</label>
+                                                <select name="" id="" class="form-control">
+                                                    <option value="Herrería">Herrería</option>
+                                                    <option value="Aluminio">Aluminio</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form row">
+                                            <div class="form-group col-md-12">
+                                                <label for="inputDireccion">Descripción</label>
+                                                <textarea name="" id="" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div
+                                                    class="card bg-dark text-white border-left-info border-secondary mt-4">
+                                                    <div class="card-body">
+                                                        <h5>Materiales</h5>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputNombre">Perfil</label>
+                                                                <select name="" id="" class="form-control">
+                                                                    <option>M-50</option>
+                                                                    <option>M-100</option>
+                                                                    <option>M-150</option>
+                                                                    <option>M-200</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="">Longitud (metros)</label>
+                                                                <input type="number" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col text-right">
+                                                                <button type="button" class="btn btn-info"><i
+                                                                        class="fas fa-plus-circle"></i> Agregar
+                                                                    perfil</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div
+                                                    class="card bg-dark text-white border-left-success border-secondary mt-4">
+                                                    <div class="card-body">
+                                                        <h5>Cristalería</h5>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <label for="inputNombre">Tipo de cristal</label>
+                                                                <select name="" id="" class="form-control">
+                                                                    <option>8 mm</option>
+                                                                    <option>10 mm</option>
+                                                                    <option>12 mm</option>
+                                                                    <option>16 mm</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="">Ancho (metros)</label>
+                                                                <input type="number" class="form-control">
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="">Largo (metros)</label>
+                                                                <input type="number" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col text-right">
+                                                                <button type="button" class="btn btn-info"><i
+                                                                        class="fas fa-plus-circle"></i> Agregar
+                                                                    cristal</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div
+                                                    class="card bg-dark text-white border-left-warning border-secondary mt-4">
+                                                    <div class="card-body">
+                                                        <h5>Pintura</h5>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <label for="inputNombre">Tipo de pintura</label>
+                                                                <select name="" id="" class="form-control">
+                                                                    <option>Primer</option>
+                                                                    <option>Smalte</option>
+                                                                    <option>Acrilico</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="">Color</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="">Cantidad (Litros)</label>
+                                                                <input type="number" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col text-right">
+                                                                <button type="button" class="btn btn-info"><i
+                                                                        class="fas fa-plus-circle"></i> Agregar
+                                                                    printura</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div
+                                                    class="card bg-dark text-white border-left-danger border-secondary mt-4">
+                                                    <div class="card-body">
+                                                        <h5>Acabados</h5>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputNombre">Tipo de acabado</label>
+                                                                <select name="" id="" class="form-control">
+                                                                    <option>Chapa</option>
+                                                                    <option>Chapa</option>
+                                                                    <option>Chapa</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="">Cantidad</label>
+                                                                <input type="number" class="form-control">
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col text-right">
+                                                                <button type="button" class="btn btn-info"><i
+                                                                        class="fas fa-plus-circle"></i> Agregar
+                                                                    acabado</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="card bg-dark text-white border-left-warning border-secondary mb-5">
+                                <div class="card-body">
+                                    <h4>Datos de la cotización</h4>
+                                    
+                                    <table class="table table-borderless table-dark">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">First</th>
+                                                <th scope="col">Last</th>
+                                                <th scope="col">Handle</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colspan="2">Larry the Bird</td>
+                                                <td>@twitter</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-right">
+                            <a href="./cotizacion.html" class="btn btn-success mb-4"><i class="fas fa-file-archive"></i> Generar cotización</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-dark text-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Portana 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded bg-secondary" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.js"></script>
+
+
+
+</body>
+
+</html>

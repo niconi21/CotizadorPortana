@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cotizador</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion border-left-danger border-right-danger"
+            id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center m-3" href="index.html">
+                <div class="sidebar-brand-icon">
+                    <img src="./img/logo positivo.png" class="img-fluid" alt="">
+                </div>
+
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-briefcase"></i>
+                    <span>Nueva cotización</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Herramientas
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item ">
+                <a class="nav-link" href="./clientes.html">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Clientes registrados</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="./ingredientes.html">
+                    <i class="fas fa-fw fa-hammer"></i>
+                    <span>Ingredientes registrados</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="./empleados.html">
+                    <i class="fas fa-fw fa-portrait"></i>
+                    <span>Empleados registrados</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./cotizaciones-anteriores.html">
+                    <i class="fas fa-fw fa-history"></i>
+                    <span>Cotizaciónes anteriores</span></a>
+            </li>
+
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <!-- <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div> -->
+
+
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+
+                <nav class="navbar navbar-expand navbar-dark bg-dark topbar static-top shadow text-white">
+
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-dark rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <h3>Resultado de cotización</h3>
+
+                </nav>
+                <!-- End of Topbar -->
+                <div class="container-fluid bg-gray-400">
+                    <div class="row">
+                        <div class="col text-right p-3 ">
+                            <button class="btn btn-success" id="btnImprimirCotizacion">Imprimir cotización</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Begin Page Content -->
+                <div class="container-fluid bg-gray-400 p-3 text-black" id="cotizacionNota">
+                    <div class="container border">
+                        <div class="row">
+                            <div class="col-3 justify-content-center align-items-center minh-100 mt-5">
+                                <img src="./img/logo positivo- cotizacion.png" class="img-fluid rounded mx-auto d-block" alt="">
+                            </div>
+                            <div class="col-9 text-right">
+                                <div class="card border-dark text-left">
+                                    <div class="card-header bg-dark text-white">
+                                        <h2>Cotización</h2>
+                                    </div>
+                                    <div class="card-body text-dark">
+                                        <h5><p>Nombre: Nombre del cliente</p></h5>
+                                        <h5><p>Dirección: dirección del cliente</p></h5>
+                                        <h5><p>Teléfono: teléfono del cliente</p></h5>
+                                    </div>
+                                </div>
+                                <p><b>*Las cotizaciónes tienen una vigencia de 7 días hábiles</b></p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="container-fluid">
+                                <p>Materíal de cotización</p>
+                                <p>Materíal de cotización</p>
+                                <p>Materíal de cotización</p>
+                                <p>Materíal de cotización</p>
+                                <p>Materíal de cotización</p>
+                                <p>Materíal de cotización</p>
+                                <p>Materíal de cotización</p>
+                                <p>Materíal de cotización</p>
+                                <p>Materíal de cotización</p>
+                                <p>Materíal de cotización</p>
+                                <p>Materíal de cotización</p>
+                                <p>Materíal de cotización</p>
+                                <p>Materíal de cotización</p>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-3 offset-2"><label for="cotizacionMaterialCb"><input type="checkbox" id="cotizacionMaterialCb" class=""><b> Materiales</b></label></div>
+                            <div class="col-3"><label for="cotizacionManoObraCb"><input type="checkbox" id="cotizacionManoObraCb" class=""><b> Mano de obra</b></label></div>
+                            <div class="col-3"><label for="cotizacionInstalacionCb"><input type="checkbox" id="cotizacionInstalacionCb" class=""><b> Instalación</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <hr class="sidebar-divider text-black">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="row"><div class="col"><small><b>1.- Se require un mínimo del 60% de anticipo, el anticipo restante al finalizar el trabajo</small></b></div></div>
+                                <div class="row"><div class="col"><small><b>2.- PORTANA no reconoce convenios verbales</small></b></div></div>
+                                <div class="row"><div class="col"><small><b>3.- Precios más IVA</small></b></div></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <hr class="sidebar-divider text-black">
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col text-center ">
+                                <p><b>Felipe Pescador #40 Col. El Pinal Teziutlán, Pue.</b></p>
+                                <p><b><i class="fab fa-whatsapp"></i> 231.106.5878</b></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+                
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-dark text-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Portana 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded bg-secondary" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.js"></script>
+    <script src="vendor/jsPDF-1.3.2/dist/jspdf.min.js"></script>
+    <script src="vendor/jsPDF-1.3.2/plugins/from_html.js"></script>
+    <script src="js/cotizacion.js"></script>
+    
+
+
+</body>
+
+</html>
