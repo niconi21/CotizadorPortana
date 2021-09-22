@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -77,6 +77,11 @@
                     <span>Empleados registrados</span></a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="./salarios.html">
+                    <i class="fas fa-fw fa-money-bill-alt"></i>
+                    <span>Salarios</span></a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="./cotizaciones-anteriores.html">
                     <i class="fas fa-fw fa-history"></i>
                     <span>Cotizaciónes anteriores</span></a>
@@ -105,7 +110,8 @@
 
                 <!-- Topbar -->
 
-                <nav class="navbar navbar-expand navbar-dark bg-dark topbar static-top shadow text-white animate__animated animate__fadeInDown">
+                <nav
+                    class="navbar navbar-expand navbar-dark bg-dark topbar static-top shadow text-white">
 
 
                     <!-- Sidebar Toggle (Topbar) -->
@@ -120,119 +126,333 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid bg-gradient-dark">
 
+                    <div class="row">
+                        <div class="col">
+                            <p>
+                                <button class="btn btn-success mt-4" type="button" data-toggle="collapse"
+                                    data-target="#collapseExample" aria-expanded="false"
+                                    aria-controls="collapseExample">
+                                    <i class="fas fa-plus-circle"></i> Registrar un nuevo ingrediente
+                                </button>
+                            </p>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card bg-dark text-white border-left-success border-secondary mb-5 mt-5">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h4>Registro de un nuevo ingrediente</h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputNombre">Nombre del ingrediente:</label>
+                                                            <input type="text" name="" id="" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputNombre">TIpo:</label>
+                                                            <select name="" id="" class="form-control">
+                                                                <option value="">Herrería</option>
+                                                                <option value="">Aluminio</option>
+                                                                <option value="">Acabados</option>
+                                                                <option value="">Pinturas</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputNombre">Precio:</label>
+                                                            <input type="number" name="" id="" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col text-right">
+                                                            <button class="btn btn-success">Agregar ingrediente</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                        </div>
+                    </div>
 
                     <div class="row">
                         <div class="col">
-                            <div class="card bg-dark text-white border-left-danger border-secondary mb-5 mt-5">
+                            <div class="card bg-dark text-white border-left-danger border-secondary mb-5">
                                 <div class="card-body">
-                                    <h4>Información de los ingredientes registrados</h4>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h4>Información de los ingredientes registrados</h4>
+                                        </div>
+                                        <div class="col-lg-4 offset-lg-2">
+                                            <form class="form-inline">
+                                                <input class="form-control mr-sm-2" type="search"
+                                                    placeholder="Nombre del ingrediente" aria-label="Buscar">
+                                                <button class="btn btn-success my-2 my-sm-0"
+                                                    type="submit">Buscar</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <nav class="nav nav-pills flex-column flex-sm-row mt-4 ">
+                                                <a class="flex-sm-fill text-sm-center nav-link active"
+                                                    href="#">Todos</a>
+                                                <a class="flex-sm-fill text-sm-center nav-link" href="#">Herrería</a>
+                                                <a class="flex-sm-fill text-sm-center nav-link" href="#">Aluminio</a>
+                                                <a class="flex-sm-fill text-sm-center nav-link" href="#">Acabados</a>
+                                                <a class="flex-sm-fill text-sm-center nav-link" href="#">Pinturas</a>
 
-                                    <table class="table table-bordered table-dark table-hover table-responsive-md">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Nombre</th>
-                                                <th scope="col">Teléfono</th>
-                                                <th scope="col">Acciónes</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Lorem ipsum dolor sit</td>
-                                                <td>231-140-5938</td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Ver historial del cliente">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lorem ipsum dolor sit</td>
-                                                <td>231-140-5938</td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Ver historial del cliente">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lorem ipsum dolor sit</td>
-                                                <td>231-140-5938</td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Ver historial del cliente">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lorem ipsum dolor sit</td>
-                                                <td>231-140-5938</td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Ver historial del cliente">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lorem ipsum dolor sit</td>
-                                                <td>231-140-5938</td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Ver historial del cliente">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lorem ipsum dolor sit</td>
-                                                <td>231-140-5938</td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Ver historial del cliente">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lorem ipsum dolor sit</td>
-                                                <td>231-140-5938</td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Ver historial del cliente">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lorem ipsum dolor sit</td>
-                                                <td>231-140-5938</td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Ver historial del cliente">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lorem ipsum dolor sit</td>
-                                                <td>231-140-5938</td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Ver historial del cliente">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lorem ipsum dolor sit</td>
-                                                <td>231-140-5938</td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Ver historial del cliente">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                            </nav>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <table
+                                                class="table table-bordered table-dark table-hover table-responsive-md mt-4">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">Nombre</th>
+                                                        <th scope="col">Tipo</th>
+                                                        <th scope="col">Precio</th>
+                                                        <th scope="col">Acciónes</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Lorem ipsum dolor sit</td>
+                                                        <td>Herrería</td>
+                                                        <td>
+                                                            $750.00
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-info" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Ver información del ingrediente">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                            <button class="btn btn-primary" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Editar información del ingrediente">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Lorem ipsum dolor sit</td>
+                                                        <td>Aluminio</td>
+                                                        <td>
+                                                            $750.00
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-info" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Ver información del ingrediente">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                            <button class="btn btn-primary" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Editar información del ingrediente">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Lorem ipsum dolor sit</td>
+                                                        <td>Herrería</td>
+                                                        <td>
+                                                            $750.00
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-info" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Ver información del ingrediente">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                            <button class="btn btn-primary" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Editar información del ingrediente">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Lorem ipsum dolor sit</td>
+                                                        <td>Aluminio</td>
+                                                        <td>
+                                                            $750.00
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-info" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Ver información del ingrediente">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                            <button class="btn btn-primary" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Editar información del ingrediente">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td>Lorem ipsum dolor sit</td>
+                                                        <td>Herrería</td>
+                                                        <td>
+                                                            $750.00
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-info" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Ver información del ingrediente">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                            <button class="btn btn-primary" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Editar información del ingrediente">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6</td>
+                                                        <td>Lorem ipsum dolor sit</td>
+                                                        <td>Pintura</td>
+                                                        <td>
+                                                            $750.00
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-info" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Ver información del ingrediente">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                            <button class="btn btn-primary" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Editar información del ingrediente">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>7</td>
+                                                        <td>Lorem ipsum dolor sit</td>
+                                                        <td>Herrería</td>
+                                                        <td>
+                                                            $750.00
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-info" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Ver información del ingrediente">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                            <button class="btn btn-primary" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Editar información del ingrediente">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>8</td>
+                                                        <td>Lorem ipsum dolor sit</td>
+                                                        <td>Pintura</td>
+                                                        <td>
+                                                            $750.00
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-info" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Ver información del ingrediente">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                            <button class="btn btn-primary" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Editar información del ingrediente">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>9</td>
+                                                        <td>Lorem ipsum dolor sit</td>
+                                                        <td>Acabado</td>
+                                                        <td>
+                                                            $750.00
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-info" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Ver información del ingrediente">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                            <button class="btn btn-primary" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Editar información del ingrediente">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>10</td>
+                                                        <td>Lorem ipsum dolor sit</td>
+                                                        <td>Acabado</td>
+                                                        <td>
+                                                            $750.00
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-info" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Ver información del ingrediente">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                            <button class="btn btn-primary" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Editar información del ingrediente">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination justify-content-end">
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#" tabindex="-1"
+                                                            aria-disabled="true">Anterior</a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">Siguiente</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
 
 
 

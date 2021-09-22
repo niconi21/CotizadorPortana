@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cotizador</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion border-left-danger border-right-danger "
+            id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center m-3" href="index.html">
+                <div class="sidebar-brand-icon">
+                    <img src="./img/logo positivo.png" class="img-fluid" alt="">
+                </div>
+
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-briefcase"></i>
+                    <span>Nueva cotización</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Herramientas
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item ">
+                <a class="nav-link" href="./clientes.html">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Clientes registrados</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="./ingredientes.html">
+                    <i class="fas fa-fw fa-hammer"></i>
+                    <span>Ingredientes registrados</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="./empleados.html">
+                    <i class="fas fa-fw fa-portrait"></i>
+                    <span>Empleados registrados</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="./salarios.html">
+                    <i class="fas fa-fw fa-money-bill-alt"></i>
+                    <span>Salarios</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./cotizaciones-anteriores.html">
+                    <i class="fas fa-fw fa-history"></i>
+                    <span>Cotizaciónes anteriores</span></a>
+            </li>
+
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <!-- <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div> -->
+
+
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column bg-dark">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+
+                <nav
+                    class="navbar navbar-expand navbar-dark bg-dark topbar static-top shadow text-white">
+
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-dark rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <h3>Salarios</h3>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid bg-gradient-dark">
+
+                    <div class="row">
+                        <div class="col">
+                            <p>
+                                <button class="btn btn-success mt-4" type="button" data-toggle="collapse"
+                                    data-target="#collapseExample" aria-expanded="false"
+                                    aria-controls="collapseExample">
+                                    <i class="fas fa-plus-circle"></i> Registrar un nuevo salario
+                                </button>
+                            </p>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card bg-dark text-white border-left-success border-secondary mb-5 mt-5">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h4>Registro de un nuevo salario</h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputNombre">Nombre de salario:</label>
+                                                            <input type="text" name="" id="" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputNombre">Cantidad:</label>
+                                                            <input type="number" name="" id="" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col text-right">
+                                                            <button class="btn btn-success">Agregar salario</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="card bg-dark text-white border-left-success border-secondary mb-5">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h4>Información de los salarios registrados</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <table
+                                                class="table table-bordered table-dark table-hover table-responsive-md mt-4">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">Nombre</th>
+                                                        <th scope="col">Monto</th>
+                                                        <th class="text-center" scope="col">Acciónes</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Salario 1</td>
+                                                        <td>$250.00</td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-primary" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Editar información del salario">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Salario 2</td>
+                                                        <td>$350.00</td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-primary" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Editar información del salario">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Salario 3</td>
+                                                        <td>$450.00</td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-primary" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Editar información del salario">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Salario 4</td>
+                                                        <td>$550.00</td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-primary" data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Editar información del salario">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination justify-content-end">
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#" tabindex="-1"
+                                                            aria-disabled="true">Anterior</a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">Siguiente</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-dark">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Portana 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded bg-secondary" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.js"></script>
+
+
+
+</body>
+
+</html>
