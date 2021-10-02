@@ -1,0 +1,663 @@
+<div class="container-fluid bg-gradient-dark">
+
+
+    <div class="row">
+        <div class="col">
+            <div class="card bg-dark text-white border-left-warning border-secondary mb-5">
+                <div class="card-body">
+                    <h4>Datos del cliente</h4>
+                    <form [formGroup]="formCliente" (ngSubmit)="agregarCliente()">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="inputNombre">Nombre</label>
+                                <input type="text" class="form-control" formControlName="nombre">
+                                <small *ngIf="formValidatorCliente.getStatus('nombre')" class="text-warning"><i
+                                        class="fas fa-exclamation-triangle"></i> Es
+                                    necesario el nombre del cliente
+                                </small>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputDireccion">Dirección</label>
+                                <input type="text" class="form-control" formControlName="direccion">
+                                <small *ngIf="formValidatorCliente.getStatus('direccion')" class="text-warning"><i
+                                        class="fas fa-exclamation-triangle"></i> Es
+                                    necesaria la dirección del cliente
+                                </small>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputTelefono">Teléfono</label>
+                                <input type="text" class="form-control" formControlName="telefono">
+                                <small *ngIf="formValidatorCliente.getStatus('telefono')" class="text-warning"><i
+                                        class="fas fa-exclamation-triangle"></i> Es
+                                    necesario el teléfono del cliente
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col text-right">
+                                <button [disabled]="formCliente.invalid" type="submit" class="btn btn-success"><i
+                                        class="fas fa-plus-circle"></i> Agregar cliente</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card bg-gradient-dark text-white border-left-primary border-secondary mb-5">
+                <div class="card-body">
+                    <h4>Cotización</h4>
+                    <form [formGroup]="formCotizacion" (ngSubmit)="agregarCotizacion()">
+                        <div formGroupName="proyecto">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputNombre">Tipo de proyecto</label>
+                                    <select class="form-control" formControlName="tipo">
+                                        <option value="Puerta">Puerta</option>
+                                        <option value="Ventana">Ventana</option>
+                                        <option value="Protección">Protección</option>
+                                    </select>
+                                    <small *ngIf="formValidatorCotizacion.getStatusGroup('proyecto','tipo')"
+                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i> Es necesario el
+                                        tipo de proyecto
+                                    </small>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputDireccion">Tipo de material</label>
+                                    <select class="form-control" formControlName="material">
+                                        <option value="Herrería">Herrería</option>
+                                        <option value="Aluminio">Aluminio</option>
+                                    </select>
+                                    <small *ngIf="formValidatorCotizacion.getStatusGroup('proyecto','material')"
+                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i> Es necesario el
+                                        tipo de proyecto
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="form row">
+                                <div class="form-group col-md-12">
+                                    <label for="inputDireccion">Descripción</label>
+                                    <textarea class="form-control" formControlName="descripcion"></textarea>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-row" formArrayName="materiales">
+                            <div class="col">
+                                <div class="card bg-dark text-white border-left-info border-secondary mt-4">
+                                    <div class="card-body">
+                                        <h5>Materiales</h5>
+                                        <div
+                                            *ngFor="let materialForm of getFormArray('materiales').controls; let i = index">
+                                            <div [formGroupName]="i" class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <label for="inputNombre">Perfil</label>
+                                                    <select class="form-control" formControlName="perfil">
+                                                        <option value="M-50">M-50</option>
+                                                        <option value="M-100">M-100</option>
+                                                        <option value="M-150">M-150</option>
+                                                        <option value="M-200">M-200</option>
+                                                    </select>
+                                                    <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('materiales',i,'perfil')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesario seleccionar el perfil
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <label for="">Longitud (metros)</label>
+                                                    <input type="number" class="form-control"
+                                                        formControlName="longitud">
+                                                    <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('materiales',i,'longitud')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesaria la longitud
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="">Cantidad (piezas)</label>
+                                                    <input type="number" class="form-control"
+                                                        formControlName="cantidad">
+                                                    <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('materiales',i,'cantidad')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesaria la cantidad
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-1">
+                                                    <label for="">Eliminar</label>
+                                                    <button class="btn btn-danger btn-block"
+                                                        (click)="eliminarRowMaterial(i)"><i
+                                                            class="fas fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputNombre">Perfil</label>
+                                                <select name="" id="" class="form-control">
+                                                    <option>M-50</option>
+                                                    <option>M-100</option>
+                                                    <option>M-150</option>
+                                                    <option>M-200</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="">Longitud (metros)</label>
+                                                <input type="number" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="">Cantidad (piezas)</label>
+                                                <input type="number" class="form-control">
+                                            </div>
+                                        </div> -->
+                                        <div class="form-row">
+                                            <div class="col text-right">
+                                                <button type="button" class="btn btn-info"
+                                                    (click)="agregarRowMaterial()">
+                                                    <i class="fas fa-plus-circle"></i> Agregar perfil</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" formArrayName="cristaleria">
+                            <div class="col">
+                                <div class="card bg-dark text-white border-left-success border-secondary mt-4">
+                                    <div class="card-body">
+                                        <h5>Cristalería</h5>
+                                        <div
+                                            *ngFor="let cristal of getFormArray('cristaleria').controls; let i = index">
+                                            <div class="form-row" [formGroupName]="i">
+                                                <div class="form-group col-md-3">
+                                                    <label for="inputNombre">Tipo de cristal</label>
+                                                    <select class="form-control" formControlName="tipo">
+                                                        <option value="8 mm">8 mm</option>
+                                                        <option value="10 mm">10 mm</option>
+                                                        <option value="12 mm">12 mm</option>
+                                                        <option value="16 mm">16 mm</option>
+                                                    </select>
+                                                    <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('cristaleria',i,'tipo')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesario el tipo de cristal
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="">Ancho (metros)</label>
+                                                    <input type="number" class="form-control" formControlName="ancho">
+                                                    <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('cristaleria',i,'ancho')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesario el ancho
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="">Largo (metros)</label>
+                                                    <input type="number" class="form-control" formControlName="largo">
+                                                    <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('cristaleria',i,'largo')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesario el largo
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-2">
+                                                    <label for="">Cantidad (piezas)</label>
+                                                    <input type="number" class="form-control"
+                                                        formControlName="cantidad">
+                                                    <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('cristaleria',i,'cantidad')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesario la cantidad
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-1">
+                                                    <label for="">Eliminar</label>
+                                                    <button class="btn btn-danger btn-block"
+                                                        (click)="eliminarRowCristaleria(i)"><i
+                                                            class="fas fa-trash"></i></button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col text-right">
+                                                <button type="button" class="btn btn-success"
+                                                    (click)="agregarRowCristaleria()"><i class="fas fa-plus-circle"></i>
+                                                    Agregar
+                                                    cristal</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" formArrayName="pintura">
+                            <div class="col">
+                                <div class="card bg-dark text-white border-left-warning border-secondary mt-4">
+                                    <div class="card-body">
+                                        <h5>Pintura</h5>
+                                        <div *ngFor="let pintura of getFormArray('pintura').controls; let i = index">
+                                            <div class="form-row" [formGroupName]="i">
+                                                <div class="form-group col-md-4">
+                                                    <label for="inputNombre">Tipo de pintura</label>
+                                                    <select class="form-control" formControlName="tipo">
+                                                        <option>Primer</option>
+                                                        <option>Smalte</option>
+                                                        <option>Acrilico</option>
+                                                    </select>
+                                                    <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('pintura',i,'tipo')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesario el tipo de pintura
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <label for="">Color</label>
+                                                    <input type="text" class="form-control" formControlName="color">
+                                                    <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('pintura',i,'color')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesario el color de la pintura
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="">Cantidad (Litros)</label>
+                                                    <input type="number" class="form-control"
+                                                        formControlName="cantidad">
+                                                    <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('pintura',i,'cantidad')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesario la cantidad de pintura
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-1">
+                                                    <label for="">Eliminar</label>
+                                                    <button class="btn btn-danger btn-block"
+                                                        (click)="eliminarRowPitura(i)"><i
+                                                            class="fas fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col text-right">
+                                                <button type="button" class="btn btn-warning"
+                                                    (click)="agregarRowPintura()"><i class="fas fa-plus-circle"></i>
+                                                    Agregar
+                                                    printura</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" formArrayName="acabados">
+                            <div class="col">
+                                <div class="card bg-dark text-white border-left-danger border-secondary mt-4">
+                                    <div class="card-body">
+                                        <h5>Acabados</h5>
+                                        <div *ngFor="let acabado of getFormArray('acabados').controls; let i = index">
+                                            <div class="form-row" [formGroupName]="i">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputNombre">Tipo de acabado</label>
+                                                    <select class="form-control" formControlName="tipo">
+                                                        <option value="Chapa">Chapa</option>
+                                                        <option value="Chapa">Chapa</option>
+                                                        <option value="Chapa">Chapa</option>
+                                                    </select>
+                                                    <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('acabados',i,'tipo')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesario el tipo del acabado
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-5">
+                                                    <label for="">Cantidad</label>
+                                                    <input type="number" class="form-control"
+                                                        formControlName="cantidad">
+                                                        <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('acabados',i,'cantidad')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesario la cantidad del acabado
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-1">
+                                                    <label for="">Eliminar</label>
+                                                    <button class="btn btn-danger btn-block"
+                                                        (click)="eliminarRowAcabados(i)"><i
+                                                            class="fas fa-trash"></i></button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col text-right">
+                                                <button type="button" class="btn btn-danger"
+                                                    (click)="agregarRowAcabados()"><i class="fas fa-plus-circle"></i>
+                                                    Agregar
+                                                    acabado</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" formArrayName="manoObra">
+                            <div class="col">
+                                <div class="card bg-dark text-white border-left-primary border-secondary mt-4">
+                                    <div class="card-body">
+                                        <h5>Mano de obra</h5>
+                                        <div *ngFor="let manoObra of getFormArray('manoObra').controls; let i = index">
+                                            <div class="form-row" [formGroupName]="i">
+                                                <div class="form-group col-md-3">
+                                                    <label for="inputNombre">Empleado</label>
+                                                    <select class="form-control" formControlName="empleado">
+                                                        <option value="Juanito Perez">Juanito Perez</option>
+                                                        <option value="Juanito Ochoa">Juanito Ochoa</option>
+                                                        <option value="Juanito Gómez">Juanito Gómez</option>
+                                                    </select>
+                                                    <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('manoObra',i,'empleado')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesario seleccionar al empleado
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="inputNombre">Tipo de salario</label>
+                                                    <select class="form-control" formControlName="tipo">
+                                                        <option value="Salario 1">Salario 1</option>
+                                                        <option value="Salario 2">Salario 2</option>
+                                                        <option value="Salario 3">Salario 3</option>
+                                                    </select>
+                                                    <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('manoObra',i,'tipo')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesario seleccionar el tipo de salario
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-2">
+                                                    <label for="inputNombre">Cantidad de días</label>
+                                                    <input type="number" class="form-control" min="0" formControlName="cantidad">
+                                                    <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('manoObra',i,'cantidad')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesario seleccionar la cantidad de días
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="inputNombre">Descripción de la actividad</label>
+                                                    <input type="text" class="form-control" min="0" formControlName="descripcion">
+                                                    <small
+                                                        *ngIf="formValidatorCotizacion.getStatusGroupArray('manoObra',i,'descripcion')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesario describir la actividad
+                                                    </small>
+                                                </div>
+                                                <div class="form-group col-md-1">
+                                                    <label for="inputNombre">Eliminar</label>
+                                                    <button class="btn btn-danger btn-block" (click)="eliminarRowManoObra(i)"><i class="fas fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col text-right">
+                                                <button type="button" class="btn btn-primary" (click)="agregarRowManoObra()"><i
+                                                        class="fas fa-plus-circle"></i> Agregar
+                                                    empelado</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="card bg-dark text-white border-left-secondary border-secondary mt-4">
+                                    <div class="card-body">
+                                        <h5>Porcentaje de ganancia</h5>
+                                        <div class="form-row">
+                                            <div class="form-group col-lg-4">
+                                                <label for="inputNombre">Porcentaje</label>
+                                                <input type="number" class="form-control" formControlName="porcentaje">
+                                                <small
+                                                        *ngIf="formValidatorCotizacion.getStatus('porcentaje')"
+                                                        class="text-warning"><i class="fas fa-exclamation-triangle"></i>
+                                                        Es necesario el porcentaje
+                                                    </small>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col text-right">
+                                                <button type="submit" class="btn btn-secondary"><i
+                                                        class="fas fa-calculator"></i> Calcular porcentaje</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card bg-dark text-white border-left-success border-secondary mb-5">
+                <div class="card-body">
+                    <h4 class="mt-2">Datos de la cotización</h4>
+                    <h5 class="mt-2">Cliente: Nombre del cliente</h5>
+                    <h6 class="mt-3">Materíales</h6>
+                    <table class="table table-borderless table-dark table-hover table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Medida</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Perfil M-150</td>
+                                <td>3.3 m</td>
+                                <td>2 piezas</td>
+                                <td>3 perfiles</td>
+                                <td>$850.00</td>
+                                <td>
+                                    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top"
+                                        title="Borrar de la cotización">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Perfil M-150</td>
+                                <td>3.3 m</td>
+                                <td>2 piezas</td>
+                                <td>3 perfiles</td>
+                                <td>$850.00</td>
+                                <td>
+                                    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top"
+                                        title="Borrar de la cotización">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Crital 18mm</td>
+                                <td>0.5m x 0.5.</td>
+                                <td>2 piezas</td>
+                                <td class="text-warning"> No aplica</td>
+                                <td>$550.00</td>
+                                <td>
+                                    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top"
+                                        title="Borrar de la cotización">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Crital 18mm</td>
+                                <td>0.5m x 0.5.</td>
+                                <td>2 piezas</td>
+                                <td class="text-warning"> No aplica</td>
+                                <td>$550.00</td>
+                                <td>
+                                    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top"
+                                        title="Borrar de la cotización">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Pintura primer</td>
+                                <td>2.5 L</td>
+                                <td class="text-warning"> No aplica</td>
+                                <td class="text-warning"> No aplica</td>
+                                <td>$300.00</td>
+                                <td>
+                                    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top"
+                                        title="Borrar de la cotización">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Pintura acrilica</td>
+                                <td>2.5 L</td>
+                                <td class="text-warning"> No aplica</td>
+                                <td class="text-warning"> No aplica</td>
+                                <td>$300.00</td>
+                                <td>
+                                    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top"
+                                        title="Borrar de la cotización">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td>Acabado - chapa</td>
+                                <td class="text-warning"> No aplica</td>
+                                <td>1 unidad</td>
+                                <td class="text-warning"> No aplica</td>
+                                <td>$150.00</td>
+                                <td>
+                                    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top"
+                                        title="Borrar de la cotización">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td>Mano de obra - sueldo 1</td>
+                                <td class="text-warning"> No aplica</td>
+                                <td>3 días</td>
+                                <td class="text-warning"> No aplica</td>
+                                <td>$850.00</td>
+                                <td>
+                                    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top"
+                                        title="Borrar de la cotización">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9</th>
+                                <td>Mano de obra - sueldo 2</td>
+                                <td class="text-warning"> No aplica</td>
+                                <td>3 días</td>
+                                <td class="text-warning"> No aplica</td>
+                                <td>$850.00</td>
+                                <td>
+                                    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top"
+                                        title="Borrar de la cotización">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10</th>
+                                <td>Mano de obra - sueldo 3</td>
+                                <td class="text-warning"> No aplica</td>
+                                <td>3 días</td>
+                                <td class="text-warning"> No aplica</td>
+                                <td>$850.00</td>
+                                <td>
+                                    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top"
+                                        title="Borrar de la cotización">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Medida</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                                <th>Monto</th>
+                                <th>Acción</th>
+                            </tr>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col">Total neto:</th>
+                                <th scope="col">$2500.00</th>
+                                <th scope="col"></th>
+                            </tr>
+                            <tr>
+
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col">Ganancia:</th>
+                                <th scope="col">$1000.00</th>
+                                <th scope="col"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col">Total bruto:</th>
+                                <th scope="col">$3500.00</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-right">
+            <a href="./cotizacion.html" target="#_blank" class="btn btn-success mb-4"><i
+                    class="fas fa-file-archive"></i>
+                Generar cotización</a>
+        </div>
+    </div>
+
+</div>

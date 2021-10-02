@@ -1,0 +1,87 @@
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion border-left-danger border-right-danger"
+    id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center m-3" href="index.html">
+      <div class="sidebar-brand-icon">
+        <img src="assets/img/logo positivo.png" class="img-fluid" alt="">
+      </div>
+
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+    <ng-container *ngFor="let categoria of categoriasMenu">
+      <hr class="sidebar-divider">
+
+      <div class="sidebar-heading">
+        {{categoria.titulo}}
+      </div>
+      <li *ngFor="let item of categoria.items" class="nav-item" routerLinkActive="active" (click)="paginaActual(item)">
+        <a class="nav-link" [routerLink]="[item.url]">
+          <i class="fas fa-fw fa-{{item.icon}}"></i>
+          <span> {{item.text}} </span></a>
+      </li>
+    </ng-container>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+      <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+
+
+  </ul>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+      <!-- Topbar -->
+
+      <nav class="navbar navbar-expand navbar-dark bg-dark topbar static-top shadow text-white">
+
+
+        <!-- Sidebar Toggle (Topbar) -->
+        <button id="sidebarToggleTop" class="btn btn-dark rounded-circle mr-3">
+          <i class="fa fa-bars"></i>
+        </button>
+        <h3>{{title}}</h3>
+
+      </nav>
+      <!-- End of Topbar -->
+
+      <!-- Begin Page Content -->
+      <router-outlet></router-outlet>
+
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-dark text-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Portana 2021</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded bg-secondary" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
