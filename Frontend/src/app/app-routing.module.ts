@@ -6,9 +6,11 @@ import { CotizacionesAnterioresComponent } from './cotizaciones-anteriores/cotiz
 import { IngredienteComponent } from './ingrediente/ingrediente.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
 import { SalarioComponent } from './salario/salario.component';
+import { NotaComponent } from './cotizacion/components/nota/nota.component';
 
 const routes: Routes = [
   { path: 'cotizacion', component: CotizacionComponent },
+  { path: 'nota', component: NotaComponent },
   { path: 'historial', component: CotizacionesAnterioresComponent },
   { path: 'cliente', component: ClienteComponent },
   { path: 'ingrediente', component: IngredienteComponent },

@@ -3,12 +3,11 @@
     <div class="row">
         <div class="col">
             <p>
-                <button class="btn btn-success mt-4" type="button" data-toggle="collapse" data-target="#collapseExample"
-                    aria-expanded="false" aria-controls="collapseExample">
+                <button class="btn btn-success mt-4" type="button" (click)="accionFormSalario()">
                     <i class="fas fa-plus-circle"></i> Registrar un nuevo salario
                 </button>
             </p>
-            <div class="collapse" id="collapseExample">
+            <div class="collapse" id="formSalario">
                 <div class="card bg-dark text-white border-left-success border-secondary mb-5 mt-5">
                     <div class="card-body">
                         <div class="row">
@@ -32,14 +31,17 @@
                                             <label for="inputNombre">Cantidad:</label>
                                             <input type="number" class="form-control" formControlName="cantidad">
                                             <small *ngIf="FormValidator.getStatus('cantidad')" class="text-warning"><i
-                                                class="fas fa-exclamation-triangle"></i> Es
-                                            necesaria la cantidad del salario
-                                        </small>
+                                                    class="fas fa-exclamation-triangle"></i> Es
+                                                necesaria la cantidad del salario
+                                            </small>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col text-right">
-                                            <button [disabled]="form.invalid" type="submit" class="btn btn-success">Agregar salario</button>
+                                            <button *ngIf="!isacutalizarSalario" [disabled]="form.invalid" type="submit"
+                                                class="btn btn-success">Agregar salario</button>
+                                            <button *ngIf="isacutalizarSalario" [disabled]="form.invalid" type="submit"
+                                                class="btn btn-info">Editar salario</button>
                                         </div>
                                     </div>
                                 </form>
@@ -73,64 +75,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Salario 1</td>
-                                        <td>$250.00</td>
+                                    <tr *ngFor="let salario of salarios">
+                                        <td>{{salario.id}}</td>
+                                        <td>{{salario.nombre}}</td>
+                                        <td>{{salario.cantidad | currency}}</td>
                                         <td class="text-center">
                                             <button class="btn btn-primary" data-toggle="tooltip" data-placement="top"
-                                                title="Editar información del salario">
+                                                title="Editar información del salario" (click)="editarSalario(salario)">
                                                 <i class="fas fa-edit"></i>
                                             </button>
-                                            <button class="btn btn-danger" data-toggle="tooltip" data-placement="top"
-                                                title="Borrar salario">
+                                            <!-- <button class="btn btn-danger ml-2" data-toggle="tooltip"
+                                                data-placement="top" title="Borrar salario">
                                                 <i class="fas fa-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Salario 2</td>
-                                        <td>$350.00</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top"
-                                                title="Editar información del salario">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                            <button class="btn btn-danger" data-toggle="tooltip" data-placement="top"
-                                                title="Borrar salario">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Salario 3</td>
-                                        <td>$450.00</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top"
-                                                title="Editar información del salario">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                            <button class="btn btn-danger" data-toggle="tooltip" data-placement="top"
-                                                title="Borrar salario">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Salario 4</td>
-                                        <td>$550.00</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top"
-                                                title="Editar información del salario">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                            <button class="btn btn-danger" data-toggle="tooltip" data-placement="top"
-                                                title="Borrar salario">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
+                                            </button> -->
                                         </td>
                                     </tr>
                                 </tbody>

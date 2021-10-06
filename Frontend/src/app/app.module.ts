@@ -12,25 +12,25 @@ import { CotizacionModule } from './cotizacion/cotizacion.module';
 import { CotizacionesAnterioresModule } from './cotizaciones-anteriores/cotizaciones-anteriores.module';
 import { IngredienteModule } from './ingrediente/ingrediente.module';
 import { EmpleadoModule } from './empleado/empleado.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     CommonModule,
     BrowserModule,
     RouterModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     SalarioModule,
     ClienteModule,
     CotizacionModule,
     CotizacionesAnterioresModule,
     IngredienteModule,
-    EmpleadoModule
+    EmpleadoModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
