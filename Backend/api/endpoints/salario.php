@@ -10,7 +10,11 @@ $salario = new Salario();
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        $salario->obtenerSalarios();
+        echo $_GET['limit'] .'<br>';
+        $limit =  $_GET['limit'] | 10;
+        echo $limit.'<br>';
+        $skip  =  $_GET['skip'] | 0;
+        $salario->obtenerSalarios($limit, $skip);
         break;
 
     case 'POST':
@@ -19,7 +23,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
     case 'PUT':
         $_PUT = json_decode(file_get_contents('php://input'), true);
-        $result = $salario->actualizarSalario($_PUT['id'],$_PUT['nombre'], $_PUT['cantidad']);
+        $result = $salario->actualizarSalario($_PUT['id'], $_PUT['nombre'], $_PUT['cantidad']);
         break;
     case 'DELETE':
         echo 'Método DELETE';

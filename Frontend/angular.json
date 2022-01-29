@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "2291b76b-0b4d-4ae6-afeb-245d05af0b6e"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -37,7 +40,7 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/jquery-easing/dist/jquery.easing.1.3.umd.min.js",
-              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
@@ -46,12 +49,12 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "10bm",
                   "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
+                  "maximumWarning": "10bm",
                   "maximumError": "4kb"
                 }
               ],
@@ -111,7 +114,7 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/jquery-easing/dist/jquery.easing.1.3.umd.min.js",
-              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           }
